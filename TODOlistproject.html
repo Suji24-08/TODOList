@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO LIST PROJECT</title>
+    </head>
+    <style>
+        body{
+            background-color: rgb(240, 23, 124);
+            font-size: 25px;
+        }
+        h1,h2{
+            text-align: center;
+            font-size: 30px;
+            margin-top: 50px;
+        }
+        .container{
+            background-color: aliceblue;
+            padding: 10px;
+            text-align: center;
+            margin-right: 300px;
+            margin-left: 300px;
+            border-radius: 25px;
+        }
+        ul{
+            list-style: none;
+        }
+        input{
+            border-radius: 25px;
+            height: 35px;
+            width: 500px;
+            border-style:none;
+        }
+        button{
+            background-color: rgb(62, 236, 62);
+            color: white;
+            height: 30px;
+            width: 75px;
+            border-radius: 25px;
+            border-style: none;
+            margin: 10px;
+        }
+    </style>
+    <body>
+        <h1>TODO LIST</h1>
+        <h2>Add your works here!</h2>
+        <div class="container">
+        <input id="in" placeholder="Type here..!">
+        <button onclick="add()">ADD</button>
+        <ul id="listitems">
+        </ul>
+        </div>
+        <script>
+            var inp = document.getElementById("in")
+            var liitem = document.getElementById("listitems")
+            function add(){
+                var listitems = document.createElement("li")
+                listitems.innerHTML = inp.value + "<button onclick='del(event)'>Delete</button>"
+                liitem.append(listitems)
+            }
+            function del(event){
+                event.target.parentElement.remove()
+            }
+        </script>
+    </body>
+</html>
